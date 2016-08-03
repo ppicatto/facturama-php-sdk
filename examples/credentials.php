@@ -1,4 +1,4 @@
 <?php 
 
-define('USER', 'pruebas');
-define('PASSWORD', 'pruebas2011');
+define('USER', '');
+define('PASSWORD', '');
