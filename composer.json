@@ -1,0 +1,7 @@
+{
+    "name": "javiertelioz/facturama-php-sdk",
+    "description": "Facturama SDK PHP",
+    "require": {
+        "php": "^5.3.3 || ^7.0",
+    }
+}
