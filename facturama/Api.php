@@ -57,12 +57,12 @@ class Api {
     {
         return base64_encode($this->user . ":" . $this->password);
     }
-	/**
-	 * Get Request
-	 * @param  string $path   
-	 * @param  Array $params 
-	 * @return Mixed
-	 */
+    /**
+     * Get Request
+     * @param  string $path
+     * @param  array $params
+     * @return mixed
+     */
 	public function get($path, $params = null)
     {
 		$opts = [
@@ -76,9 +76,10 @@ class Api {
     }
     /**
      * POST Request
-     * @param string $body
-     * @param Array $params
-     * @return Mixed
+     * @param  string $path
+     * @param  array $body
+     * @param  array  $params
+     * @return mixed
      */
     public function post($path, $body = null, $params = [])
     {
@@ -96,10 +97,10 @@ class Api {
     }
     /**
      * PUT Request
-     * @param string $path
-     * @param string $body
-     * @param Array $params
-     * @return Mixed
+     * @param  string $path
+     * @param  mixed $body
+     * @param  array $params
+     * @return mixed
      */
     public function put($path, $body = null, $params = null)
     {
@@ -118,8 +119,8 @@ class Api {
     }
     /**
      * DELETE Request
-     * @param string $path
-     * @param array $params
+     * @param  string $path
+     * @param  mixed $params
      * @return mixed
      */
     public function delete($path, $params = null)
@@ -138,9 +139,9 @@ class Api {
     }
     /**
      * Execute all requests and returns the json body and headers
-     * @param string $path
-     * @param array $opts
-     * @param array $params
+     * @param  string $path
+     * @param  array  $opts
+     * @param  array  $params
      * @return mixed
      */
     public function execute($path, $opts = [], $params = [])
@@ -167,11 +168,11 @@ class Api {
         return $return;
     }
     /**
-     * Check and construct an real URL to make request
-     * @param string $path
-     * @param array $params
-     * @return string
-     */
+      * Check and construct an real URL to make request
+      * @param  string $path
+      * @param  array  $params
+      * @return string
+      */
     public function make_path($path, $params = []) {
         if (!preg_match("/^http/", $path)) {
             if (!preg_match("/^\//", $path)) {
