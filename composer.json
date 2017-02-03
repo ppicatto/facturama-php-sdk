@@ -1,13 +1,41 @@
 {
     "name": "javiertelioz/facturama-php-sdk",
     "description": "Facturama SDK PHP",
-    "keywords": ["PHP", "JSON", "Facturama", "Url"],
+    "keywords": ["PHP", "JSON", "Facturama"],
     "license": "MIT",
+    "type": "library",
+    "homepage": "https://facturama.mx/",
+    "support": {
+        "issues": "https://github.com/javiertelioz/facturama-php-sdk/issues"
+    },
     "authors": [
         {
             "name": "Javier Telio",
             "email": "jtelio118@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=5.4",
+        "ext-curl": "*",
+        "ext-openssl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.7",
+        "friendsofphp/php-cs-fixer": "^2.0@dev",
+        "phpmd/phpmd": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Facturama\\": ["src/"]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": { "Facturama\\Tests\\": "tests/" },
+        "files": [ "examples/credentials.php" ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
 }

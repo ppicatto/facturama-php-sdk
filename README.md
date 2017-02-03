@@ -1,23 +1,23 @@
 #Facturama SDK PHP
 ## How do I install it?
-git clone https://github.com/javiertelioz/facturama-php-sdk.git
+composer install javiertelioz/facturama-php-sdk:^1.0@dev
 ### Including the Lib
 It includes the library to your project
 ```php
-require '/facturama/Api.php';
+require __DIR__.'/vendor/autoload.php';
 ```
 Start the development!
 ### Create an instance of Facturama\Api class
 Example.
 ```php
-$facturma = new Api('USER', 'PASSWORD');
+$facturama = new \Facturama\Api('USER', 'PASSWORD');
 ```
 With this instance you can start working.
 At this stage your are ready to make call to the API on behalf of the user.
 #### Making GET calls
 ```php
 $params = [];
-$result = $facturma->get('Client', $params);
+$result = $facturama->get('Client', $params);
 ```
 #### Making POST calls
 ```php
@@ -37,7 +37,7 @@ $params = [
   "Name" => "Test Test",
   "Email" => "test@facturma.com"
 ];
-$result = $facturma->post('Client', $params);
+$result = $facturama->post('Client', $params);
 ```
 #### Making PUT calls
 ```php
@@ -60,16 +60,16 @@ $body = [
   "Email" => "test@facturma.com"
 ];
 
-$result = $facturma->put('Client/' . $clientId, $body);
+$result = $facturama->put('Client/' . $clientId, $body);
 ```
 #### Making DELETE calls
 ```php
 $clientId = 'TGpJ_Ko32_ZSEPBcZXRnRw2';
 
-$result = $facturma->delete('Client/' . $clientId);
+$result = $facturama->delete('Client/' . $clientId);
 ```
 ## Examples
-Don't forget to check out our examples codes in the folder [examples](https://github.com/javiertelioz/facturama-php-sdk/tree/master/examples)
+Don't forget to check out our examples codes in the [examples](https://github.com/javiertelioz/facturama-php-sdk/tree/master/examples) directory
 
 ## I want to contribute!
 That is great! Just fork the project in github. Create a topic branch, write some code, and add some tests for your new code.
