@@ -184,8 +184,11 @@ class Api
         }
 
         $response = curl_exec($ch);
-        $response = preg_split('/^\r?$/m', $response, 2);
-        $return['body'] = json_decode(trim($response[1]));
+        list($headers, $content) = explode("\r\n\r\n", $response, 2);
+        if (!$return['body'] = json_decode(trim($content))) {
+            list($headers, $content) = explode("\r\n\r\n", $content, 2);
+            $return['body'] = json_decode(trim($content));
+        }
         $return['httpCode'] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
 
